@@ -6,33 +6,33 @@ import time
 
 #UPPERCASE LETTERS 
 
-LETTER_A = int('0b11101110', 2)
-LETTER_C = int('0b10011100', 2)
-LETTER_E = int('0b10011110', 2)
-LETTER_F = int('0b10001110', 2)
-LETTER_H = int('0b01101110', 2)
-LETTER_L = int('0b00011100', 2)
-LETTER_I = int('0b00001100', 2)
-LETTER_O = int('0b11111100', 2)
-LETTER_P = int('0b11001110', 2)
-LETTER_S = int('0b10110110', 2)
-LETTER_G = int('0b10111110', 2)
-LETTER_J = int('0b01111000', 2)
-LETTER_U = int('0b01111100', 2)
+LETTER_A =   0b11101110  
+LETTER_C =   0b10011100  
+LETTER_E =   0b10011110  
+LETTER_F =   0b10001110  
+LETTER_H =   0b01101110  
+LETTER_L =   0b00011100  
+LETTER_I =   0b00001100  
+LETTER_O =   0b11111100  
+LETTER_P =   0b11001110  
+LETTER_S =   0b10110110  
+LETTER_G =   0b10111110  
+LETTER_J =   0b01111000  
+LETTER_U =   0b01111100  
 
 
 #LOWERCASE LETTERS
 
 
-LETTER_b = int('0b00111110', 2)
-LETTER_c = int('0b00011010', 2)
-LETTER_d = int('0b01111010', 2)
-LETTER_h = int('0b00101110', 2)
-LETTER_n = int('0b00101010', 2)
-LETTER_o = int('0b00111010', 2)
-LETTER_r = int('0b00001010', 2)
-LETTER_u = int('0b00111000', 2)
-LETTER_y = int('0b01110110', 2)
+LETTER_b =   0b00111110  
+LETTER_c =   0b00011010  
+LETTER_d =   0b01111010  
+LETTER_h =   0b00101110  
+LETTER_n =   0b00101010  
+LETTER_o =   0b00111010  
+LETTER_r =   0b00001010  
+LETTER_u =   0b00111000  
+LETTER_y =   0b01110110  
 
 #Array for testing purposes
 
@@ -40,16 +40,16 @@ letters = [LETTER_A, LETTER_C, LETTER_E, LETTER_F, LETTER_H, LETTER_L, LETTER_I,
 
 #NUMBERS
 
-NUM_0 = int('0b11111100', 2)
-NUM_1 = int('0b01100000', 2)
-NUM_2 = int('0b11011010', 2)
-NUM_3 = int('0b11110010', 2)
-NUM_4 = int('0b01100110', 2)
-NUM_5 = int('0b10110110', 2)
-NUM_6 = int('0b10111110', 2)
-NUM_7 = int('0b11100000', 2)
-NUM_8 = int('0b11111110', 2)
-NUM_9 = int('0b11110110', 2)
+NUM_0 =   0b11111100  
+NUM_1 =   0b01100000  
+NUM_2 =   0b11011010  
+NUM_3 =   0b11110010  
+NUM_4 =   0b01100110  
+NUM_5 =   0b10110110  
+NUM_6 =   0b10111110  
+NUM_7 =   0b11100000  
+NUM_8 =   0b11111110  
+NUM_9 =   0b11110110  
 
 
 #Array for testing purposes
@@ -58,27 +58,27 @@ numbers = [ NUM_0, NUM_1, NUM_2, NUM_3, NUM_4, NUM_5, NUM_6, NUM_7, NUM_8, NUM_9
 
 #SPECIAL
 
-BLANK = int('0b00000000', 2)
-DP = int('0b00000001', 2)
-VERTICAL_LINES = int('0b01101100', 2)
-HORIZONTAL_LINES = int('0b10010010', 2)
-TOP_LINE = int('0b10000000', 2)
-MIDDLE_LINE = int('0b00000010', 2)
-BOTTOM_LINE = int('0b00010000', 2)
-TOP_VERTICAL_LINES = int('0b01000100', 2)
-BOTTOM_VERTICAL_LINES = int('0b00101000', 2)
-LEFT_VERTICAL_LINES = int('0b00001100', 2)
-RIGHT_VERTICAL_LINES = int('0b01100000', 2)
-TOP_BOTTOM_LINES = int('0b10010000', 2)
-TOP_MIDDLE_LINES = int('0b10000010', 2)
-MIDDLE_BOTTOM_LINES = int('0b00010010', 2)
-ALL_SEGMENTS = int('0b11111111', 2)
+BLANK =   0b00000000  
+DP =   0b00000001  
+VERTICAL_LINES =   0b01101100  
+HORIZONTAL_LINES =   0b10010010  
+TOP_LINE =   0b10000000  
+MIDDLE_LINE =   0b00000010  
+BOTTOM_LINE =   0b00010000  
+TOP_VERTICAL_LINES =   0b01000100  
+BOTTOM_VERTICAL_LINES =   0b00101000  
+LEFT_VERTICAL_LINES =   0b00001100  
+RIGHT_VERTICAL_LINES =   0b01100000  
+TOP_BOTTOM_LINES =   0b10010000  
+TOP_MIDDLE_LINES =   0b10000010  
+MIDDLE_BOTTOM_LINES =   0b00010010  
+ALL_SEGMENTS =   0b11111111  
 
 #Array for testing purposes
 
 special = [BLANK, DP, VERTICAL_LINES, HORIZONTAL_LINES, TOP_LINE, MIDDLE_LINE, BOTTOM_LINE, TOP_VERTICAL_LINES, BOTTOM_VERTICAL_LINES, LEFT_VERTICAL_LINES, RIGHT_VERTICAL_LINES, TOP_BOTTOM_LINES, TOP_MIDDLE_LINES, MIDDLE_BOTTOM_LINES, ALL_SEGMENTS]
 
-#Variables and an array to hold pin values. Variables are assigned pin values with function 'initPins_1Digit'
+#Variables and an array to hold pin values. Variables are assigned pin values with function  initPins_1Digit 
 pins = []
 
 def initPins_1Digit(a, b, c, d, e, f, g, dp):
@@ -109,7 +109,7 @@ def initPins_1Digit(a, b, c, d, e, f, g, dp):
 
 def clearDisplay_1Digit():
 	for i in range(8):
-		pins[i].value(int(bin(BLANK >> i & 1)[2:]))
+		pins[i].value((BLANK >> i) & 1)
 
 #Writes to display with a binary value. A change is made to the array of pin values, whether they are high or low.
 #Bitwise operations go through the binary string right to left, if 1 appears, a pin is set high. If 0 appears, low.
@@ -119,7 +119,7 @@ def writeToDisplay_1Digit(toDisplay):
 	clearDisplay_1Digit()
 	
 	for i in range(8):
-		pins[i].value(int(bin(toDisplay >> i & 1)[2:]))
+		pins[i].value((toDisplay >> i) & 1)
 	
 	
 
