@@ -9,13 +9,13 @@
   3. 1Digit 7-Segment Display with Shift Register
   4. 4Digit 7-Segment Display with Shift Register
 
-  In function names a suffix is usually added in the form of _1Digit or _4Digit, which I found necessary 
+  In function names a suffix is usually added in the form of _1Digit or _4Digit_595, which I found necessary 
   in order to be able to use both a 4 digit and 1 digit display in one project. 
  
  
   Micropython works with a boot.py file, and a main.py file.  
 
-  Main.py contains an example how to use the display in 3 steps.  
+  Each module folder has a Main.py that contains an example how to use the display in 3 steps.  
 
   1. importing library 
   2. Initializing pins  
